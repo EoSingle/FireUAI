@@ -70,33 +70,4 @@ A Gestão de Riscos e Conformidade preocupa-se em avaliar e mitigar os riscos de
 
 # **Hacker:**
 
-No sentido mais amplo, um hacker é alguém que entende profundamente os sistemas computacionais e as redes e usa esse conhecimento para explorar, modificar ou contornar as limitações dos sistemas. A intenção do hacker pode variar de acordo com suas motivações, que podem incluir aprendizado, melhoria de sistemas, segurança cibernética ética ou atividades maliciosas.
-
-## **Tipos de Hackers:**
-
-1. **Hacker White Hat (Ético):**
-    - São hackers éticos e legais que utilizam suas habilidades para proteger sistemas. Trabalham como profissionais de segurança, testando sistemas em busca de vulnerabilidades e ajudando a corrigi-las antes que possam ser exploradas por criminosos.
-    
-2. **Hacker Black Hat (Malicioso):**
-    - Agem de maneira maliciosa, explorando vulnerabilidades para ganho pessoal ou causando danos a sistemas. Criminosos cibernéticos, crackers e invasores de sistemas muitas vezes se enquadram nessa categoria.
-    
-3. **Hacker Grey Hat (Neutro):**
-    - Essa categoria é um meio-termo entre os hackers éticos e maliciosos. Um hacker grey hat pode explorar sistemas sem permissão, mas sem intenções maliciosas. Às vezes, revelam as vulnerabilidades que descobrem, mas nem sempre obtêm permissão para suas atividades.
-    
-4. **Hacker Hacktivista:**
-    - São hackers que realizam atividades cibernéticas para promover causas sociais ou políticas. Suas ações muitas vezes envolvem invadir sistemas como forma de protesto ou para chamar a atenção para determinadas questões.
-    
-5. **Hacker Script Kiddie:**
-    - Refere-se a indivíduos sem habilidades técnicas significativas que utilizam ferramentas ou scripts prontos para uso para realizar ataques. Geralmente, eles não entendem profundamente o que estão fazendo.
-    
-6. **Hacker Phreaker:**
-    - Originalmente, um termo utilizado para descrever aqueles que exploram e manipulam sistemas telefônicos. Atualmente, o termo pode se estender para hackers que se concentram em explorar e manipular sistemas de comunicação mais amplos.
-    
-7. **Hacker Social Engineering:**
-    - Embora não seja estritamente técnico, este tipo de hacker explora a natureza humana para obter informações confidenciais. Usam técnicas de persuasão e manipulação para enganar as pessoas e obter acesso não autorizado a sistemas.
-    
-8. **Hacker de Hardware:**
-    - Concentra-se em explorar vulnerabilidades em dispositivos físicos, circuitos eletrônicos e outros componentes de hardware.
-
-
-É importante destacar que, dependendo do contexto, o termo "hacker" pode ser utilizado de maneira positiva ou negativa. Muitos hackers desempenham papéis cruciais na segurança cibernética, enquanto hackers maliciosos (crackers) representam uma ameaça à segurança digital.
+Leia o artigo [[Tipos de Hacker]](./Tipos%20de%20Hacker.md) para entender melhor sobre o termo e os diferentes tipos de hackers existentes.
