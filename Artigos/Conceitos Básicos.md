@@ -15,7 +15,7 @@ Para um ativo ser definido como protegido alguns atributos devem ser mantidos, s
 
 Estes atributos são conhecidos como a tríade CIA (Confidentiality, Integrality, Availability) sendo um modelo designado a guiar as politicas de cibersegurança de uma organização.
 
-![CIAtriad](./Imagens/CIAtriad.png)
+![CIAtriad](../Imagens/CIAtriad.png)
 
 Definições mais recentes argumentam que a tríade precisa de novos atributos, dessa forma, adicionam outras características como:
 
@@ -40,7 +40,7 @@ O CSF é estruturado em cinco funções principais, cada uma centrada em uma ár
 4. **Respond (Responder):** Desenvolver e implementar planos de resposta a incidentes para lidar eficazmente com eventos de segurança.
 5. **Recover (Recuperar):** Desenvolver e implementar planos de recuperação para restaurar as operações normais após um incidente.
 
-![NISTframework](./Imagens/NISTframework.png)
+![NISTframework](../Imagens/NISTframework.png)
 
 A versão 2.0 do framework, lançada em agosto de 2023, introduziu a governança como uma nova função crítica que abrange todo o processo. O documento completo pode ser acessado em: https://doi.org/10.6028/NIST.CSWP.29.ipd
 
