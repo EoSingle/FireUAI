@@ -24,7 +24,7 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 
 ### Artigos não iniciados
 - Broken Acess Control
-- Buffer Overflos
+- Buffer Overflow
 - Directory Scan
 - Metasploit
 - Port Scan
