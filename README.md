@@ -19,7 +19,7 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 - [Conceitos Básicos](./Artigos/Conceitos%20Básicos.md)
 - [Profissões em Cibersegurança](./Artigos/Profissões%20em%20cibersegurança.md)
 - [Tipos de Hackers](./Artigos/Tipos%20de%20Hacker.md)
-- [Ética](./Ética.md)
+- [Ética](./Artigos/Ética.md)
 - [Introdução à Redes](./Artigos/Introdução%20à%20Redes.md)
 
 ### Artigos não iniciados
