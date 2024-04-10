@@ -17,7 +17,7 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 
 ### Artigos em andamento
 - [Conceitos Básicos](./Artigos/Conceitos%20Básicos.md)
-- [Essencial de Linux](./Artigos/Essencial%20de%20Linux)
+- [Essencial de Linux](./Artigos/Essencial%20de%20Linux.md)
 - [Profissões em Cibersegurança](./Artigos/Profissões%20em%20cibersegurança.md)
 - [Tipos de Hackers](./Artigos/Tipos%20de%20Hacker.md)
 - [Ética](./Artigos/Ética.md)
