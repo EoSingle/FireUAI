@@ -50,7 +50,7 @@ Suponha que um usuário queira acessar a página inicial de um site chamado "exa
 
 O Protocolo HTTP é uma tecnologia fundamental que possibilita a comunicação eficaz na Web. Ao entender seu funcionamento, suas etapas de comunicação, os tipos de requisições, métodos e os códigos de status, os desenvolvedores são capacitados a criar aplicações web robustas e eficientes. Com o crescimento contínuo da internet e das tecnologias web, o HTTP continua a desempenhar um papel vital na troca de informações online.
 
-**Ficou afim de saber mais sobre o protocolo http?**
+**Ficou a fim de saber mais sobre o protocolo http?**
 
 **Então leia o artigo, https://www.alura.com.br/artigos/http
 e/ou assista ao video, https://youtu.be/CXzbUwK6lc8?si=y49BSdsCY4uwidrZ**
