@@ -1,4 +1,4 @@
-# Desvendando o protocolo HTTP: funcionamento, etapas de comunicação, requisições, métodos, status e vulnerabilidades
+# Desvendando o protocolo HTTP: funcionamento, etapas de comunicação, requisições, métodos, status e vulnerabilidades.
 **Por Álvaro L.**
 
 O Protocolo de Transferência de Hipertexto, abreviado como HTTP (do inglês, Hypertext Transfer Protocol), é a base da comunicação na World Wide Web (WWW). Desde sua criação por Tim Berners-Lee na década de 1990, o HTTP tem sido essencial para a troca de informações entre clientes, como navegadores web, e servidores. Neste artigo, vamos explorar detalhadamente o que é o protocolo HTTP, como ele funciona, suas etapas de comunicação, os tipos de requisições, métodos e os códigos de status.
