@@ -7,6 +7,10 @@ O Protocolo de Transferência de Hipertexto, abreviado como HTTP (do inglês, Hy
 
 O Protocolo HTTP é um protocolo de comunicação utilizado para transferir dados na internet. Ele opera no modelo cliente-servidor, onde um cliente (geralmente um navegador web) faz requisições a um servidor para acessar recursos, como páginas da web, imagens ou vídeos, através de URLs (Uniform Resource Locators).
 
+## Mas e o HTTPS?
+
+O HTTPS (Hypertext Transfer Protocol Secure) é uma versão segura do protocolo HTTP. Ele emprega criptografia SSL/TLS para proteger a integridade e a privacidade das informações durante a comunicação entre o navegador do usuário e o servidor web. 
+
 ## Funcionamento do HTTP:
 
 O HTTP opera em um modelo de solicitação-resposta, seguindo várias etapas de comunicação:
