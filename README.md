@@ -18,10 +18,10 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 ### Artigos em andamento
 - [Conceitos Básicos](./Artigos/Conceitos%20Básicos.md)
 - [Essencial de Linux](./Artigos/Essencial%20de%20Linux.md)
-- [Profissões em Cibersegurança](./Artigos/Profissões%20em%20cibersegurança.md)
-- [Tipos de Hackers](./Artigos/Tipos%20de%20Hacker.md)
 - [Ética](./Artigos/Ética.md)
 - [Introdução à Redes](./Artigos/Introdução%20à%20Redes.md)
+- [Profissões em cibersegurança](./Artigos/Profissões%20em%20cibersegurança.md)
+- [Tipos de Hacker](./Artigos/Tipos%20de%20Hacker.md)
 - [O protocolo HTTP](./Artigos/HTTP%20e%20HTTPS.md)
 
 ### Artigos não iniciados
