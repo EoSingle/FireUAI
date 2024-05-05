@@ -25,7 +25,6 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 - [O protocolo HTTP](./Artigos/HTTP%20e%20HTTPS.md)
 
 ### Artigos não iniciados
-- Essencial de Linux
 - Broken Acess Control
 - Buffer Overflow
 - Directory Scan

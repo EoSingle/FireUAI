@@ -1,25 +1,97 @@
-# Desvendando o protocolo HTTP: funcionamento, etapas de comunicação, requisições, métodos, status e vulnerabilidades.
-**Por Álvaro L.**
+# O protocolo HTTP
+**Por Álvaro L., Lucas Albano e Thiago Felipe**
 
 O Protocolo de Transferência de Hipertexto, abreviado como HTTP (do inglês, Hypertext Transfer Protocol), é a base da comunicação na World Wide Web (WWW). Desde sua criação por Tim Berners-Lee na década de 1990, o HTTP tem sido essencial para a troca de informações entre clientes, como navegadores web, e servidores. Neste artigo, vamos explorar detalhadamente o que é o protocolo HTTP, como ele funciona, suas etapas de comunicação, os tipos de requisições, métodos e os códigos de status.
 
 ## O que é o Protocolo HTTP?
 
-O Protocolo HTTP é um protocolo de comunicação utilizado para transferir dados na internet. Ele opera no modelo cliente-servidor, onde um cliente (geralmente um navegador web) faz requisições a um servidor para acessar recursos, como páginas da web, imagens ou vídeos, através de URLs (Uniform Resource Locators).
+O Protocolo HTTP é um protocolo da camada de aplicação utilizado para transferir documentos de hipermídia, como o HTML. Ele opera no modelo cliente-servidor, onde um cliente (geralmente um navegador web) faz requisições a um servidor para acessar recursos, como páginas da web, imagens ou vídeos, através de URLs (Uniform Resource Locators). É também um protocolo sem estado ou stateless protocol, que significa que o servidor não mantem nenhum dado entre duas requisições (state). Apesar de ser frequentemente baseado em uma camada TCP/IP, pode ser utilizado em qualquer camada de transporte confiável, ou seja, um protocolo que não perde mensagens silenciosamente como o UDP.
 
 ## Mas e o HTTPS?
 
-O HTTPS (Hypertext Transfer Protocol Secure) é uma versão segura do protocolo HTTP. Ele emprega criptografia SSL/TLS para proteger a integridade e a privacidade das informações durante a comunicação entre o navegador do usuário e o servidor web. 
+O HTTPS (Hypertext Transfer Protocol Secure) é uma atualização do protocolo HTTP original que introduz camadas de segurança. Anteriormente, o modelo HTTP mantinha a conexão entre cliente e servidor como pacotes de bytes abertos, portanto qualquer um que conseguisse interceptar esse tráfego seria capaz de acessar informações sensíveis do usuário que poderiam estar nesse pacote. Pensando nisso, foi criado o modelo HTTPS, que emprega criptografia SSL/TLS para proteger a integridade e a privacidade das informações durante a comunicação entre o navegador do usuário e o servidor web.
 
-## Funcionamento do HTTP:
+O modelo SSL/TLS consiste na forma de criptografia utilizada junto com o HTTP atualmente, que foi primeiramente implementado com o SSL(Secure Sockets Layer), criado pela empresa Netscape. Nesse sentido, apesar de o modelo funcionar muito bem, ele possuía algumas falhas de segurança, além disso órgãos reguladores relacionados à internet, principalmente dos EUA, ficaram preocupados com a exclusividade que a Netscape tinha com relação a esse modelo de criptografia, uma vez que se eles cessassem seus serviços de alguma maneira, todo o tráfico HTTPS também pararia imediatamente. Nesse sentido, com a intenção de não se tornar refém de uma empresa privada, foi criado o protocolo TLS(Transport Layer Security), tendo como ponto de partida o SSL e resolvendo os problemas de segurança que seu antecessor possuía.
 
-O HTTP opera em um modelo de solicitação-resposta, seguindo várias etapas de comunicação:
+O protocolo TLS atual funciona com uma mistura de criptografia utilizando chaves simétricas e assimétricas. Primeiramente, quando o cliente tenta estabelecer o primeiro contato com o servidor, ele utiliza da chave de criptografia pública do servidor para criptografar uma mensagem contendo uma chave simétrica, o servidor utiliza sua chave privada para descriptografar essa mensagem e assim, receber a chave que estava contida nela. A partir desse momento, o servidor e o cliente começam a se comunicar utilizando essa chave simétrica, esse método evita que a chave seja interceptada por alguém mal-intencionado e permite a comunicação por criptografia simétrica, que é mais rápida e, portanto, melhora a performance da comunicação entre as duas partes.
 
-1. **Estabelecimento da Conexão:** O cliente inicia a comunicação estabelecendo uma conexão TCP/IP com o servidor na porta padrão 80 para HTTP e na porta 443 para HTTPS (HTTP Secure).
-2. **Envio da Requisição:** O cliente envia uma mensagem de requisição HTTP contendo informações como o método da requisição, a URL do recurso desejado, cabeçalhos de requisição e, opcionalmente, o corpo da requisição com dados adicionais.
-3. **Processamento da Requisição:** O servidor recebe a requisição, interpreta os dados e determina como responder. Ele executa a ação solicitada pelo cliente e prepara uma resposta apropriada.
-4. **Envio da Resposta:** O servidor envia uma mensagem de resposta HTTP de volta ao cliente contendo o código de status da resposta, cabeçalhos de resposta e, opcionalmente, o corpo da resposta com os dados solicitados pelo cliente.
-5. **Fechamento da Conexão:** Após completar a transação, a conexão TCP pode ser fechada, dependendo das configurações do servidor e do cliente.
+## Funcionamento e Estrutura do HTTP
+
+O HTTP opera em um modelo de solicitação-resposta (request-response), seguindo várias etapas de comunicação:
+
+1. **Estabelecimento da Conexão:** O cliente inicia a comunicação estabelecendo uma conexão TCP/IP com o servidor na porta padrão 80 para HTTP ou na porta 443 para HTTPS.
+2. **Solicitação (Request):** O cliente envia uma mensagem de requisição HTTP contendo informações como o método da requisição (GET, POST, etc.), a URL do recurso desejado, cabeçalhos de requisição e, opcionalmente, o corpo da requisição com dados adicionais.
+3. **Processamento da Requisição:** O servidor recebe a requisição, interpreta os dados e determina o que deve ser feito.
+4. **Resposta (Response):** O servidor envia uma mensagem de resposta HTTP de volta ao cliente contendo o código de status da resposta (200, 302, 404, etc.), os cabeçalhos de resposta e, opcionalmente, o corpo da resposta com os dados solicitados pelo cliente.
+5. **Fechamento da Conexão:** Após completar a transmissão, a conexão TCP pode ser encerrada, a menos que seja mantida aberta para futuras solicitações (através do cabeçalho `Connection: keep-alive`).
+
+### Pacotes HTTP
+Um pacote HTTP possui dois tipos principais de cabeçalhos: o cabeçalho de solicitação (Request Header), enviado pelo cliente para o servidor, e o cabeçalho de resposta (Response Header), enviado pelo servidor de volta para o cliente. 
+#### Cabeçalho de Solicitação (Request Header):
+```
+Método URI Versão_HTTP
+Cabeçalho_1: Valor_1
+Cabeçalho_2: Valor_2
+...
+Cabeçalho_N: Valor_N
+
+Corpo_da_Solicitação (Opcional)
+```
+
+- **Método**: Indica a ação que o cliente deseja realizar no recurso identificado pelo URI. Exemplos comuns incluem GET, POST, PUT, DELETE, etc.
+- **URI**: Uniform Resource Identifier que identifica o recurso solicitado.
+- **Versão HTTP**: Versão do protocolo HTTP sendo usada, como HTTP/1.1.
+- **Cabeçalhos**: São pares chave-valor que fornecem informações adicionais sobre a solicitação. Podem incluir informações sobre o cliente, preferências de conteúdo, formatos aceitos, cookies, entre outros.
+- **Corpo da Solicitação**: Opcionalmente, a solicitação pode incluir um corpo, contendo os dados a serem enviados ao servidor, como no caso de solicitações POST.
+
+> Nem todos os cabeçalhos exibidos em uma requisição são cabeçalhos de requisição. Por exemplo, o `Content-length` exibido em uma requisição POST é na realidade uma **entity header**, que referencia o tamanho do corpo da mensagem de requisição. Porém, esses cabeçalhos de entidade muitas vezes são chamados de cabeçalhos de requisição.
+
+**Exemplo de Request Header:**
+
+```
+GET /home.html HTTP/1.1
+Host: developer.mozilla.org
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://developer.mozilla.org/testpage.html
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+If-Modified-Since: Mon, 18 Jul 2016 02:36:04 GMT
+If-None-Match: "c561c68d0ba92bbeb8b0fff2a9199f722e3a621a"
+Cache-Control: max-age=0
+```
+
+##### Entity Headers Comuns:
+
+1. **Content-Type**: Indica o tipo de mídia do corpo da entidade, como text/html, application/json, image/jpeg, etc.
+2. **Content-Length**: Indica o tamanho do corpo da entidade em bytes.
+3. **Content-Encoding**: Indica a codificação aplicada ao corpo da entidade, como gzip, deflate, br, etc.
+4. **Content-Language**: Indica o idioma natural ou idiomas do conteúdo no corpo da entidade.
+5. **Content-Disposition**: Especifica a forma como o conteúdo deve ser apresentado ao usuário, por exemplo, inline (dentro da página) ou attachment (como um download).
+6. **ETag**: Uma etiqueta de entidade exclusiva, geralmente usada para verificação de condições de atualização usando cabeçalhos de solicitação If-Match ou If-None-Match.
+7. **Last-Modified**: Indica a data e hora em que a entidade foi modificada pela última vez.
+8. **Expires**: Indica a data e hora de expiração da entidade, após a qual ela é considerada obsoleta.
+9. **Cache-Control**: Controla o comportamento de armazenamento em cache de entidades em caches intermediários.
+10. **Pragma**: Usado para fornecer diretivas de controle de cache para compatibilidade com versões mais antigas do HTTP.
+12. **Allow**: Especifica os métodos HTTP permitidos em uma entidade.
+#### Cabeçalho de Resposta (Response Header):
+```
+Versão_HTTP Código_de_Status Razão
+Cabeçalho_1: Valor_1
+Cabeçalho_2: Valor_2
+...
+Cabeçalho_N: Valor_N
+
+Corpo_da_Resposta (Opcional)
+```
+
+- **Versão HTTP**: Versão do protocolo HTTP sendo usada, como HTTP/1.1.
+- **Código de Status**: Indica o resultado do processamento da solicitação pelo servidor, como 200 para sucesso, 404 para recurso não encontrado, 500 para erro interno do servidor, etc.
+- **Razão**: Uma breve descrição textual do código de status.
+- **Cabeçalhos**: Assim como no cabeçalho de solicitação, os cabeçalhos de resposta são pares chave-valor que fornecem informações adicionais sobre a resposta enviada pelo servidor.
+- **Corpo da Resposta**: Opcionalmente, a resposta pode incluir um corpo, contendo os dados solicitados pelo cliente, como no caso de solicitações GET bem-sucedidas.
 
 ## Requisições HTTP:
 
@@ -32,7 +104,7 @@ Existem vários tipos de métodos HTTP que podem ser utilizados em uma requisiç
 - **PATCH:** Aplica modificações parciais a um recurso.
 - **HEAD:** Solicita apenas os cabeçalhos de resposta, sem o corpo da resposta.
 
-## Status HTTP:
+### Status HTTP:
 
 Após receber uma requisição, o servidor responde com um código de status HTTP, que indica o resultado da operação. Grupos de status HTTP:
 
@@ -65,6 +137,20 @@ Após receber uma requisição, o servidor responde com um código de status HTT
 10. **410 Gone**: O recurso solicitado não está mais disponível e não estará novamente.
 
 11. **500 Internal Server Error**: Indica um problema inesperado no servidor que impede o atendimento da solicitação. Geralmente requer investigação por parte dos desenvolvedores para identificar a causa.
+
+### Cookies
+
+HTTP Cookies são pequenos arquivos de texto armazenados no dispositivo do usuário pelo navegador da web. Eles são usados para armazenar informações específicas sobre a atividade do usuário em um determinado site. Os cookies desempenham um papel fundamental na personalização da experiência do usuário na web, permitindo que os sites se lembrem das preferências e do histórico de navegação dos usuários.
+
+#### Funcionamento dos cookies
+
+Quando um usuário visita um site, o navegador envia uma solicitação HTTP para o servidor web. Esta solicitação inclui informações sobre o navegador, o dispositivo e outras informações relevantes. O servidor responde à solicitação enviando não apenas o conteúdo da página solicitada, mas também instruções sobre como o navegador deve se comportar. Isso inclui a definição de cookies.
+
+Quando o navegador recebe a resposta do servidor, ele armazena os cookies no dispositivo do usuário. Os cookies geralmente consistem em pares de chave-valor e podem conter informações como preferências de idioma, informações de login, itens no carrinho de compras, etc. Em solicitações subsequentes para o mesmo site, o navegador envia os cookies relevantes de volta para o servidor junto com a solicitação HTTP. Isso permite que o servidor acesse as informações armazenadas nos cookies e personalize a experiência do usuário de acordo. O servidor processa os cookies recebidos junto com a solicitação e utiliza as informações contidas neles para personalizar a resposta. Por exemplo, se um usuário está logado, o servidor pode fornecer acesso a áreas restritas do site.
+
+Os cookies podem ser atualizados, modificados ou excluídos pelo servidor a qualquer momento. Eles também podem ter uma data de expiração, após a qual são automaticamente removidos pelo navegador.
+
+Os cookies são amplamente utilizados na web para uma variedade de fins, incluindo rastreamento de sessões de usuários, personalização de conteúdo, armazenamento de preferências do usuário e muito mais. No entanto, é importante observar que os cookies também podem levantar preocupações com a privacidade do usuário, especialmente quando são usados para rastrear o comportamento do usuário sem seu consentimento explícito.
 
 ## Principais vulnerabilidades do protocolo HTTP:
 
@@ -104,10 +190,11 @@ Para mitigar as vulnerabilidades do HTTP, são recomendadas as seguintes medidas
 
 ## Conclusão:
 
-O Protocolo HTTP é uma tecnologia fundamental que possibilita a comunicação eficaz na Web. Ao entender seu funcionamento, suas etapas de comunicação, os tipos de requisições, métodos, códigos de status e as vulnerabilidades, os desenvolvedores, ou outros profissionais da área, são capacitados a criar aplicações web robustas e eficientes e compreender o papel deste protocolo no funcionamento da internet. Pois com o crescimento contínuo da internet e das tecnologias web, o HTTP continua a desempenhar um papel vital na troca de informações online.
+O Protocolo HTTP é um dos principais protocolos da internet, sendo fundamental para seu funcionamento. Ao entender suas etapas de comunicação, os tipos de requisições e respostas, métodos, códigos de status, sua estrutura e as vulnerabilidades, os desenvolvedores são capacitados a criar aplicações web mais seguras. Além disso, entender o HTTP é indispensável para profissionais de segurança da informação, como pentesters, pois é o procolo que dita a interação com aplicações web.
 
-**Para saber mais sobre o protocolo HTTP, acesse os materias complementares:**
+#### Materiais complementares:
 
 - https://www.alura.com.br/artigos/http
-
 - https://youtu.be/CXzbUwK6lc8?si=y49BSdsCY4uwidrZ
+- https://developer.mozilla.org/pt-BR/docs/Web/HTTP
+- https://en.wikipedia.org/wiki/HTTP_cookie
