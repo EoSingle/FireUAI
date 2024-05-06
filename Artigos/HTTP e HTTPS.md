@@ -95,7 +95,7 @@ Corpo_da_Resposta (Opcional)
 
 ## Requisições HTTP:
 
-Existem vários tipos de métodos HTTP que podem ser utilizados em uma requisição. Alguns dos métodos mais comuns incluem:
+Existem nove tipos de métodos HTTP que podem ser utilizados em uma requisição, são eles:
 
 - **GET:** Solicita dados de um recurso específico
 - **POST:** Submete dados para serem processados por um recurso identificado pela URL.
@@ -103,6 +103,9 @@ Existem vários tipos de métodos HTTP que podem ser utilizados em uma requisiç
 - **DELETE:** Remove o recurso especificado.
 - **PATCH:** Aplica modificações parciais a um recurso.
 - **HEAD:** Solicita apenas os cabeçalhos de resposta, sem o corpo da resposta.
+- **TRACE:** Ecoa o pedido, de maneira que o cliente possa saber o que os servidores intermediários estão mudando em seu pedido.
+- **OPTIONS:** Recupera os métodos HTTP que o servidor aceita.
+- **CONNECT:** Serve para uso com um proxy que possa se tornar um túnel SSL e TLS (um túnel pode ser usado, por exemplo, para criar uma conexão segura).
 
 ### Status HTTP:
 
@@ -122,21 +125,31 @@ Após receber uma requisição, o servidor responde com um código de status HTT
 
 3. **204 No Content**: O servidor atendeu à solicitação, mas não há conteúdo para retornar. Geralmente usado para solicitações que não exigem resposta, como exclusões.
 
-4. **304 Not Modified**: Usado para cache de navegador. Indica que a versão em cache do recurso ainda é válida e pode ser usada.
+4. **205 Reset Content**: Diz ao agente do usuário para redefinir o documento que enviou esta solicitação.
 
-5. **400 Bad Request**: O servidor não consegue entender ou processar a solicitação devido a um erro do cliente, como dados ausentes ou formatação inválida.
+5. **300 Multiple Choices**: A solicitação tem mais de uma resposta possível. O agente do usuário ou usuário deve escolher um deles. (Não há uma maneira padronizada de escolher uma das respostas, mas links HTML para as possibilidades são recomendados para que o usuário possa escolher).
 
-6. **401 Unauthorized**: A autenticação é necessária para acessar o recurso, mas falhou ou não foi fornecida.
+6. **301 Moved Permanently**: A URL do recurso solicitado foi alterada permanentemente. A nova URL é fornecida na resposta.
 
-7. **403 Forbidden**: O servidor se recusa a aceitar a solicitação, mesmo que seja válida. Geralmente por falta de permissão.
+7. **302 Found**: Este código de resposta significa que o URI do recurso solicitado foi alterado temporariamente. Outras alterações no URI podem ser feitas no futuro. Portanto, esta mesma URI deve ser utilizada pelo cliente em requisições futuras.
 
-8. **404 Not Found**: Indica que o recurso solicitado não foi encontrado no servidor.
+8. **304 Not Modified**: Usado para cache de navegador. Indica que a versão em cache do recurso ainda é válida e pode ser usada.
 
-9. **409 Conflict**: A solicitação entra em conflito com o estado atual do recurso, geralmente devido a atualizações simultâneas.
+9. **400 Bad Request**: O servidor não consegue entender ou processar a solicitação devido a um erro do cliente, como dados ausentes ou formatação inválida.
 
-10. **410 Gone**: O recurso solicitado não está mais disponível e não estará novamente.
+10. **401 Unauthorized**: A autenticação é necessária para acessar o recurso, mas falhou ou não foi fornecida.
 
-11. **500 Internal Server Error**: Indica um problema inesperado no servidor que impede o atendimento da solicitação. Geralmente requer investigação por parte dos desenvolvedores para identificar a causa.
+11. **403 Forbidden**: O servidor se recusa a aceitar a solicitação, mesmo que seja válida. Geralmente por falta de permissão.
+
+12. **404 Not Found**: Indica que o recurso solicitado não foi encontrado no servidor.
+
+13. **409 Conflict**: A solicitação entra em conflito com o estado atual do recurso, geralmente devido a atualizações simultâneas.
+
+14. **410 Gone**: O recurso solicitado não está mais disponível e não estará novamente.
+
+15. **500 Internal Server Error**: Indica um problema inesperado no servidor que impede o atendimento da solicitação. Geralmente requer investigação por parte dos desenvolvedores para identificar a causa.
+
+16. **501 Not Implemented**: O método da requisição não é suportado pelo servidor e não pode ser manipulado.
 
 ### Cookies
 
