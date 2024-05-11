@@ -23,13 +23,15 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 - [Profissões em cibersegurança](./Artigos/Profissões%20em%20cibersegurança.md)
 - [Tipos de Hacker](./Artigos/Tipos%20de%20Hacker.md)
 - [O protocolo HTTP](./Artigos/HTTP%20e%20HTTPS.md)
+- [Estrutura de uma URL](./Artigos/Estrutura%20de%20uma%20URL.md)
+- [IDOR](./Artigos/IDOR.md)
 
 ### Artigos não iniciados
-- Broken Acess Control
 - Buffer Overflow
 - Directory Scan
 - Metasploit
 - Port Scan
+- SQL Injection
 - XSS
 - ...
 

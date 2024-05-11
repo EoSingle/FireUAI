@@ -77,4 +77,4 @@ A Gestão de Riscos e Conformidade preocupa-se em avaliar e mitigar os riscos de
 
 # **Hacker:**
 
-Leia o artigo [[Tipos de Hacker]](./Tipos%20de%20Hacker.md) para entender melhor sobre o termo e os diferentes tipos de hackers existentes.
+Leia o artigo [Tipos de Hacker](./Tipos%20de%20Hacker.md) para entender melhor sobre o termo e os diferentes tipos de hackers existentes.

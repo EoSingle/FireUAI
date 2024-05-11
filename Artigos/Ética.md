@@ -1,3 +1,5 @@
+(Incompleto)
+
 A crescente dependência da tecnologia e a constante evolução da internet trouxeram à tona a importância da ética na segurança da informação. À medida que informações sensíveis e valiosas são armazenadas, compartilhadas e processadas digitalmente, surge a necessidade de estabelecer diretrizes éticas sólidas para garantir que esses dados sejam protegidos de maneira responsável e respeitosa.
 
 >  Ética é a área do conhecimento que estuda o comportamento moral, visando compreender, criticar e justificar a moral de uma sociedade. Pode ser definida como um código moral que orienta o processo de tomada de decisão e comportamento da sociedade.

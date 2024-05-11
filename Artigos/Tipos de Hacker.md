@@ -1,3 +1,5 @@
+(Incompleto)
+
 Com o avanço da tecnologia e da interatividade digital, utilizamos cada vez mais dispositivos eletrônicos para trabalho, para o lazer e para compras online. Independente do dispositivo, acessar sites, lojas virtuais e redes sociais exigem a inclusão do cadastro de dados pessoais que, se forem expostos à terceiros, podem causar sérios prejuízos. 
 
 A segurança da informação é um campo vital, pois envolve medidas como a criptografia, autenticação de multifator, firewall, entre outros, para garantir a proteção e segurança de dados sensíveis dos usuários. Porém, caso haja alguma brecha nesse sistema, pode ser uma porta aberta para o ataque de **hackers**. 
