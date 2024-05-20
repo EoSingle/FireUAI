@@ -7,5 +7,5 @@
 - [Profissões em cibersegurança](./Profissões%20em%20cibersegurança.md)
 - [Tipos de Hacker](./Tipos%20de%20Hacker.md)
 - [O protocolo HTTP](./HTTP%20e%20HTTPS.md)
-- [Estrutura de uma URL](./Artigos/Estrutura%20de%20uma%20URL.md)
-- [IDOR](./Artigos/IDOR.md)
+- [Estrutura de uma URL](./Estrutura%20de%20uma%20URL.md)
+- [IDOR](./IDOR.md)
