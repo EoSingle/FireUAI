@@ -9,3 +9,4 @@
 - [O protocolo HTTP](./HTTP%20e%20HTTPS.md)
 - [Estrutura de uma URL](./Estrutura%20de%20uma%20URL.md)
 - [IDOR](./IDOR.md)
+- [SQL Injection](./SQL%20Injection.md)

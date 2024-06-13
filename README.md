@@ -25,13 +25,13 @@ Não são necessários conhecimentos prévios. Nosso objetivo é auxiliar estuda
 - [O protocolo HTTP](./Artigos/HTTP%20e%20HTTPS.md)
 - [Estrutura de uma URL](./Artigos/Estrutura%20de%20uma%20URL.md)
 - [IDOR](./Artigos/IDOR.md)
+- [SQL Injection](./Artigos/SQL%20Injection.md)
 
 ### Artigos não iniciados
 - Buffer Overflow
 - Directory Scan
 - Metasploit
 - Port Scan
-- SQL Injection
 - XSS
 - ...
 
