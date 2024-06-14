@@ -105,6 +105,14 @@ Neste exemplo:
 
 Essa estrutura básica pode ser expandida com outras cláusulas SQL dependendo das necessidades específicas da consulta, mas esses são os elementos essenciais para construir e entender uma query SQL simples de consulta.
 
+## ORMs(Object Relational Mapping):
+ORMs são frameworks de desenvolvimento que intermediam o processo de consulta no banco de dados transformando tabelas SQL em Objetos e vice-versa, dessa forma, os desenvolvedores não precisem trabalhar diretamente com SQL. Essa alternativa além de acarretar em mais produtividade, também evita vulnerabilidades SQL pois permite uma filtragem pela aplicação antes que ela crie a query.
+Dentre os principais Frameworks estão:
+- Prisma(Javascript e Typescript)
+- PonyORM(Python)
+- SQLAlchemy(Python)
+- Entity Framework(.NET)
+
 ## SQL Injection
 
 O SQL Injection (SQLi) é uma vulnerabilidade web que permite que um invasor interfira nas consultas que um aplicativo faz em seu banco de dados. Isso pode permitir que um invasor visualize dados que normalmente não deveria conseguir acessar. Isso pode incluir dados que pertencem a outros usuários ou quaisquer outros dados que o aplicativo possa acessar. Em muitos casos, um invasor pode modificar ou excluir esses dados, causando alterações persistentes no conteúdo ou no comportamento do aplicativo.
